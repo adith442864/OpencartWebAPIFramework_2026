@@ -1,4 +1,4 @@
-import {test, expect, request} from '@playwright/test'
+import {test, expect, request, APIRequestContext} from '@playwright/test'
 
 
 const AUTH_TOKEN = {Authorization: `Bearer ${process.env.API_TOKEN}`}
@@ -42,6 +42,20 @@ test('create a new user test', async ({page, request}) => {
 });
 
 
+async function createUser(request: APIRequestContext): Promise<number> {
+    const response = await request.post('https://gorest.co.in/public/v2/users', {
+        headers: AUTH_TOKEN,
+        data: {
+            name: "uday",
+            email: `uday${Date.now()}${Math.floor(Math.random() * 100000)}@example.com`,
+            gender: "male",
+            status: "active"
+        }
+    });
+    expect(response.status()).toBe(201);
+    return (await response.json()).id;
+}
+
 async function randomEmail() {
     const randomNum = Math.floor(Math.random() * 10000);
     return `uday${randomNum}@example.com`;
@@ -57,8 +71,10 @@ test('update user test', async ({page, request}) => {
     status: "inactive"
   }  
 
+    const userId = await createUser(request);
+
     //JS Object to JSON -> Serialization
-    const response = await request.put('https://gorest.co.in/public/v2/users/8719463', {
+    const response = await request.put(`https://gorest.co.in/public/v2/users/${userId}`, {
         headers: AUTH_TOKEN,
         data: userData
     });
@@ -81,14 +97,15 @@ test('update user test', async ({page, request}) => {
 
 test('delete user test', async ({page, request}) => {
 
-    //JS Object to JSON -> Serialization
-    const response = await request.delete('https://gorest.co.in/public/v2/users/8719463', {
+    const userId = await createUser(request);
+
+    const response = await request.delete(`https://gorest.co.in/public/v2/users/${userId}`, {
         headers: AUTH_TOKEN,
-        
     });
 
     console.log(response.status());
     console.log(response.statusText());
+    expect(response.status()).toBe(204);
     
     
 });

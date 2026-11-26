@@ -25,6 +25,7 @@ for(const row of productData) {
     await homePage.doSearch(row.searchkey);
     const resultsCount = await searchResultsPage.getProductSearchResultsCount();
     await searchResultsPage.selectProduct(row.productname);
-    expect(await page.title()).toBe(row.productname);
+    // some demo products (e.g. Canon EOS 5D) have a custom SEO page title, so assert on the product heading
+    await expect(page.getByRole('heading', { level: 1, name: row.productname })).toBeVisible();
   });
 }

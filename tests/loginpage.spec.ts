@@ -14,7 +14,8 @@ test.beforeEach(async ({ page }) => {
 
 
 test('login page title test', async ({ }) => {
-  const pageTitle = await loginPage.goToLoginPage();
+  await loginPage.goToLoginPage();
+  const pageTitle = await loginPage.getPageTitle();
   console.log(`Login page title is: ${pageTitle}`);
   expect(pageTitle).toBe('Account Login');
 

@@ -31,6 +31,9 @@ export class SearchResultsPage extends BasePage {
 
   //3. Methods to interact with the page elements
   async getProductSearchResultsCount(): Promise<number> {
+    // count() does not auto-wait, so make sure the search results page has loaded first
+    await this.page.waitForURL(/route=product\/search/);
+    await this.page.waitForLoadState('domcontentloaded');
     return await this.searchResults.count();
   }
 

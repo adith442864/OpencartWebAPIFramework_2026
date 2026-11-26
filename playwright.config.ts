@@ -11,6 +11,8 @@ dotenv.config({ path: `config/.env.${ENV}` });
 
 export default defineConfig({
   testDir: './tests',
+  /* Amadeus test API is no longer reachable (DNS does not resolve), so keep it out of all runs */
+  testIgnore: '**/amadeus.oauth2.spec.ts',
   /* The public demo site can be slow; default 30s is too tight for login + search + navigation */
   timeout: 60_000,
   /* Run tests in files in parallel */
