@@ -1,0 +1,46 @@
+[
+    {
+        "searchkey": "macbook",
+        "productname": "MacBook Pro",
+        "imagecount": 4,
+        "expectedInfo": {
+            "ProductHeader": "MacBook Pro",
+            "ProductImagesCount": 4,
+            "Brand": "Apple",
+            "Product Code": "Product 18",
+            "Reward Points": "800",
+            "Availability": "Out Of Stock",
+            "ProductPrice": "$2,000.00",
+            "ExTaxPrice": "$2,000.00"
+        }
+    },
+    {
+        "searchkey": "macbook",
+        "productname": "MacBook Air",
+        "imagecount": 4,
+        "expectedInfo": {
+            "ProductHeader": "MacBook Air",
+            "ProductImagesCount": 4,
+            "Brand": "Apple",
+            "Product Code": "Product 17",
+            "Reward Points": "700",
+            "Availability": "Out Of Stock",
+            "ProductPrice": "$1,202.00",
+            "ExTaxPrice": "$1,000.00"
+        }
+    },
+    {
+        "searchkey": "samsung",
+        "productname": "Samsung Galaxy Tab 10.1",
+        "imagecount": 7,
+        "expectedInfo": {
+            "ProductHeader": "Samsung Galaxy Tab 10.1",
+            "ProductImagesCount": 7,
+            "Product Code": "SAM1",
+            "Reward Points": "1000",
+            "Availability": "Pre-Order",
+            "ProductPrice": "$241.99",
+            "ExTaxPrice": "$199.99"
+        }
+    }
+]

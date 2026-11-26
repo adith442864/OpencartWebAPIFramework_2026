@@ -1,0 +1,63 @@
+# =============================================================================
+# .gitignore — Files and directories excluded from Git tracking
+# =============================================================================
+
+# Dependencies
+node_modules/
+
+# Environment & secrets (API tokens, OAuth secrets, credentials)
+.env
+.env.*
+!.env.example
+config/.env*
+config/*.env
+!config/.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+.auth/
+auth.json
+src/data/auth.json
+storageState*.json
+
+# Playwright test artifacts
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+
+# Reports
+/reports/
+/allure-results/
+/allure-report/
+/reporting-labs/
+reporting-labs.history.json
+/custom-report/
+
+# Build output
+dist/
+
+# Tool / IDE config (local caches, not project files)
+.claude/
+.commandcode/
+.playwright-cli/
+.playwright-mcp/
+.playwright/
+.vscode/
+.idea/
+
+# OS files and logs
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+
+# Others
+/prompts/
+/docs/
+
+# Misc
+*.tgz
