@@ -16,7 +16,7 @@ const search = JsonHelper.readJsonAs<ProductData[]>('data/productinfo.json');
 
 test.beforeEach(async ({ loginPage }) => {
   await loginPage.goToLoginPage();
-  await loginPage.doLogin(process.env.APPUSERNAME!, process.env.PASSWORD!);
+  await loginPage.doLogin(process.env.USERNAME!, process.env.PASSWORD!);
  
 });
 

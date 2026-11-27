@@ -7,7 +7,7 @@ import dotenv from 'dotenv';
 //ENV=qa npx playwright test
 const ENV = process.env.ENV || "qa";
 console.log('Running tests on Environment: ', ENV);
-dotenv.config({ path: `config/.env.${ENV}` });
+dotenv.config({ path: `config/.env.${ENV}`, override: true });
 
 export default defineConfig({
   testDir: './tests',

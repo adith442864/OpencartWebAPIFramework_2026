@@ -27,7 +27,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          repository: naveenanimation20/OpenCartWebAPIAutomationFramework
+          repository: adith442864/OpencartWebAPIFramework_2026
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -100,7 +100,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          repository: naveenanimation20/OpenCartWebAPIAutomationFramework
+          repository: adith442864/OpencartWebAPIFramework_2026
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -192,7 +192,7 @@ jobs:
       cancel-in-progress: false
     env:
       RUN_DIR: pages-deploy/runs/${{ github.run_id }}
-      REPORT_URL: https://naveenanimation20.github.io/OpenCartWebAPIAutomationFramework/runs/${{ github.run_id }}
+      REPORT_URL: https://adith442864.github.io/OpencartWebAPIFramework_2026/runs/${{ github.run_id }}
     steps:
       - name: Download merged reports
         uses: actions/download-artifact@v4

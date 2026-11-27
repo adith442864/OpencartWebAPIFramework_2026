@@ -26,7 +26,7 @@ test('forgot password link test', async ({  }) => {
 });
 
 test('verify login test', async ({  }) => {
-  await loginPage.doLogin(process.env.APPUSERNAME!, process.env.PASSWORD!);
+  await loginPage.doLogin(process.env.USERNAME!, process.env.PASSWORD!);
   //one expect is pending.
   expect.soft(await homePage.isLogoutLinkExist()).toBeTruthy();
   expect.soft(await homePage.getHomePageTitle()).toBe('My Account');
